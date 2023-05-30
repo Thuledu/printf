@@ -60,19 +60,15 @@ int print_string(va_list types, char buff[],
 	if (width > len)
 	{
 		if (flag & F_MINUS)
-		{
 			write(1, &string[0], len);
 			for (a = width - len; a > 0; a--)
 				write(1, " ", 1);
 			return (width);
-		}
-		else
-		{
+		else if
 			for (a = width - len; a > 0; a--)
 				write(1, " ", 1);
 			write(1, &string[0], len);
 			return (width);
-		}
 	}
 	return (write(1, string, len));
 }
