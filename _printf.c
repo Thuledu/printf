@@ -11,7 +11,7 @@ int _printf(const char *format, ...)
 	int prints = 0, prints_chars = 0, buff_index = 0;
 	int flag, precisions, width, sizes;
 	va_list list_str;
-	char buff[BUFFER_SIZE];
+	char buff[BUFF_SIZE];
 
 	if (format == NULL)
 	{
@@ -25,7 +25,7 @@ int _printf(const char *format, ...)
 		if (format[a] != '%')
 		{
 			buff[buff_index++] = format[a];
-			if (buff_index == BUFFER_SIZE)
+			if (buff_index == BUFF_SIZE)
 				prints_buffer(buff, &buff_index);
 			/* write(1, &format[a], 1);*/
 			prints_chars++;
