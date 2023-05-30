@@ -2,7 +2,7 @@
 #include <stdio.h>
 /** PRINT CHAR */
 /**
- * prints_char - Prints char
+ * print_char - Prints char
  * @types: Lists the arguments
  * @buff: Buffer array that handles prints
  * @flag:  Calculates flags that are active
@@ -11,7 +11,7 @@
  * @sizes: Specifier for size
  * Return: Number of printed chars
  */
-int prints_char(va_list types, char buff[],
+int print_char(va_list types, char buff[],
 	int flag, int precisions, int width, int sizes)
 {
 	char g = va_arg(types, int);
@@ -80,7 +80,7 @@ int print_string(va_list types, char buff[],
 
 /** PRINTS THE PERCENT SIGN */
 /**
- * prints_percent - Prints the percent sign
+ * print_percent - Prints the percent sign
  * @types: Lists the arguments
  * @buff: Buffer array that handles prints
  * @flag:  Calculates flags that are active
@@ -89,7 +89,7 @@ int print_string(va_list types, char buff[],
  * @sizes: Specifier for size
  * Return: Number of printed chars
  */
-int prints_percent(va_list types, char buff[],
+int print_percent(va_list types, char buff[],
 	int flag, int precisions, int width, int sizes)
 {
 	UNUSED(types);
@@ -117,16 +117,16 @@ int print_int(va_list types, char buff[],
 		int flag, int precisions, int width, int sizes)
 {
 	int negative = 0;
-	int a = BUFFER_SIZE - 2;
+	int a = BUFF_SIZE - 2;
 	long int d = va_arg(types, long int);
 	unsigned long int number;
 
-	d = convert_size_number(s, sizes);
+	d = convert_size_number(d, sizes);
 
 	if (d == 0)
 		buff[a--] = '0';
 
-	buff[BUFFER_SIZE - 1] = '\0';
+	buff[BUFF_SIZE - 1] = '\0';
 	number = (unsigned long int)d;
 
 	if (d < 0)

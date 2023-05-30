@@ -45,12 +45,12 @@ int _printf(const char *format, ...);
 /* FUNCTIONS */
 
 /* Funtions that print chars and strings */
-int print_string(va_list types, char buff[],
-	int flag, int width, int precisions, int sizes);
-int print_percent(va_list types, char buff[],
-	int flag, int width, int precisions, int sizes);
-int print_char(va_list types, char buff[],
-	int flag, int width, int precisions, int sizes);
+int print_string(va_list types, char buffer[],
+	int flags, int width, int precision, int size);
+int print_percent(va_list types, char buffer[],
+	int flags, int width, int precision, int size);
+int print_char(va_list types, char buffer[],
+	int flags, int width, int precision, int size);
 
 /* Functions that print memory address */
 int print_pointer(va_list types, char buffer[],

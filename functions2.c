@@ -20,7 +20,7 @@ int print_pointer(va_list types, char buff[],
 	char maps_to[] = "0123456789abcdef";
 	void *address = va_arg(types, void *);
 	char extra_s = 0, padd = ' ';
-	int index = BUFFER_SIZE - 2, len = 2, padd_starts = 1;
+	int index = BUFF_SIZE - 2, len = 2, padd_starts = 1;
 
 	UNUSED(sizes);
 	UNUSED(width);
@@ -28,7 +28,7 @@ int print_pointer(va_list types, char buff[],
 	if (address == NULL)
 		return (write(1, "(nil)", 5));
 
-	buff[BUFFER_SIZE - 1] = '\0';
+	buff[BUFF_SIZE - 1] = '\0';
 	UNUSED(precisions);
 
 	num_address = (unsigned long)address;
@@ -72,7 +72,7 @@ int print_pointer(va_list types, char buff[],
  * Return: Number of printed chars
  */
 int print_non_printable(va_list types, char buff[],
-		int flag, int precision, int width, int sizes)
+		int flag, int precisions, int width, int sizes)
 {
 	char *string = va_arg(types, char *);
 	int a = 0, offst = 0;

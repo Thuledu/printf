@@ -16,7 +16,7 @@ int print_unsigned(va_list types, char buff[],
 		int flag, int precisions, int width, int sizes)
 {
 	unsigned long int number = va_arg(types, unsigned long int);
-	int a = BUFFER_SIZE - 2;
+	int a = BUFF_SIZE - 2;
 
 	number = convert_size_unsgnd(number, sizes);
 
@@ -25,7 +25,7 @@ int print_unsigned(va_list types, char buff[],
 		buff[a--] = '0';
 	}
 
-	buff[BUFFER_SIZE - 1] = '\0';
+	buff[BUFF_SIZE - 1] = '\0';
 
 	while (number > 0)
 	{
@@ -54,7 +54,7 @@ int print_octal(va_list types, char buff[],
 		int flag, int precisions, int width, int sizes)
 {
 	unsigned long int number = va_arg(types, unsigned long int);
-	int a = BUFFER_SIZE - 2;
+	int a = BUFF_SIZE - 2;
 	unsigned long int init_number = number;
 
 	UNUSED(width);
@@ -64,7 +64,7 @@ int print_octal(va_list types, char buff[],
 	if (number == 0)
 		buff[a--] = '0';
 
-	buff[BUFFER_SIZE - 1] = '\0';
+	buff[BUFF_SIZE - 1] = '\0';
 
 	while (number > 0)
 	{
@@ -137,7 +137,7 @@ int print_hexa(va_list types, char maps_to[], char buff[],
 		int flag, char flag_ch, int precisions, int width, int sizes)
 {
 	unsigned long int number = va_arg(types, unsigned long int);
-	int a = BUFFER_SIZE - 2;
+	int a = BUFF_SIZE - 2;
 	unsigned long int init_number = number;
 
 	UNUSED(width);
@@ -147,7 +147,7 @@ int print_hexa(va_list types, char maps_to[], char buff[],
 	if (number == 0)
 		buff[a--] = '0';
 
-	buff[BUFFER_SIZE - 1] = '\0';
+	buff[BUFF_SIZE - 1] = '\0';
 
 	while (number > 0)
 	{
